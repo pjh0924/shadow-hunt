@@ -1,0 +1,21 @@
+{
+	"appId": "com.shadowhunt.app",
+	"appName": "Shadow Hunt",
+	"webDir": "dist",
+	"android": {
+		"allowMixedContent": false
+	},
+	"server": {
+		"androidScheme": "https"
+	},
+	"packageClassList": [
+		"BackgroundGeolocation",
+		"CAPCameraPlugin",
+		"FilesystemPlugin",
+		"GeolocationPlugin",
+		"HapticsPlugin",
+		"LocalNotificationsPlugin",
+		"PreferencesPlugin",
+		"SharePlugin"
+	]
+}

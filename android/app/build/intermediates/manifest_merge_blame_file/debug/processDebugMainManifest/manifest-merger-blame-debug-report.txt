@@ -1,0 +1,373 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.shadowhunt.app"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="36" />
+10
+11    <!-- Permissions -->
+12
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:34:5-67
+13-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:34:22-64
+14
+15    <!-- Step 1: 위치 추적 (Geolocation 플러그인 / WebView getCurrentPosition) -->
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:37:5-81
+16-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:37:22-78
+17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+17-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:38:5-79
+17-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:38:22-76
+18
+19    <!-- Step 2: 카메라 (WebView getUserMedia + Camera 플러그인) -->
+20    <uses-permission android:name="android.permission.CAMERA" />
+20-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:41:5-65
+20-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:41:22-62
+21
+22    <uses-feature
+22-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:42:5-85
+23        android:name="android.hardware.camera"
+23-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:42:19-57
+24        android:required="false" />
+24-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:42:58-82
+25    <uses-feature
+25-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:43:5-95
+26        android:name="android.hardware.camera.autofocus"
+26-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:43:19-67
+27        android:required="false" />
+27-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:43:68-92
+28
+29    <!-- Step 4: 공유 + 파일 저장 -->
+30    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+30-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:46:5-76
+30-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:46:22-73
+31
+32    <!-- Step 5+: 로컬 알림 (헌트존 진입) -->
+33    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+33-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:49:5-77
+33-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:49:22-74
+34    <uses-permission android:name="android.permission.VIBRATE" />
+34-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:50:5-66
+34-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:50:22-63
+35    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+35-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:5-77
+35-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:22-74
+36    <!--
+37    Android SDK 34+ additionally requires the FOREGROUND_SERVICE_LOCATION
+38    runtime permission to start a foreground service of type "location".
+39    -->
+40    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+40-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:14:5-86
+40-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:14:22-83
+41
+42    <uses-feature android:name="android.hardware.location.gps" />
+42-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:21:5-66
+42-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:21:19-63
+43
+44    <queries>
+44-->[:capacitor-camera] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/camera/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-17:15
+45        <intent>
+45-->[:capacitor-camera] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/camera/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:9-10:18
+46            <action android:name="android.media.action.IMAGE_CAPTURE" />
+46-->[:capacitor-camera] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/camera/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:13-73
+46-->[:capacitor-camera] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/camera/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:21-70
+47        </intent>
+48        <intent>
+48-->[:capacitor-camera] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/camera/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:9-13:18
+49            <action android:name="android.intent.action.GET_CONTENT" />
+49-->[:capacitor-camera] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/camera/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:13-72
+49-->[:capacitor-camera] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/camera/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:21-69
+50        </intent>
+51        <intent>
+51-->[:capacitor-camera] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/camera/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:14:9-16:18
+52            <action android:name="android.intent.action.PICK" />
+52-->[:capacitor-camera] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/camera/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:13-65
+52-->[:capacitor-camera] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/camera/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:21-62
+53        </intent>
+54    </queries>
+55
+56    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+56-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-81
+56-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:22-78
+57    <uses-permission android:name="android.permission.WAKE_LOCK" />
+57-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:5-68
+57-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:22-65
+58    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+58-->[io.ionic.libs:iongeolocation-android:2.2.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f9f36ed1f901e20a235c9439f9d4c093/transformed/iongeolocation-android-2.2.0/AndroidManifest.xml:7:5-79
+58-->[io.ionic.libs:iongeolocation-android:2.2.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f9f36ed1f901e20a235c9439f9d4c093/transformed/iongeolocation-android-2.2.0/AndroidManifest.xml:7:22-76
+59
+60    <permission
+60-->[androidx.core:core:1.17.0] /Users/autovation/.gradle/caches/8.14.3/transforms/11094a199bb7945826b161d8a9c17beb/transformed/core-1.17.0/AndroidManifest.xml:22:5-24:47
+61        android:name="com.shadowhunt.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+61-->[androidx.core:core:1.17.0] /Users/autovation/.gradle/caches/8.14.3/transforms/11094a199bb7945826b161d8a9c17beb/transformed/core-1.17.0/AndroidManifest.xml:23:9-81
+62        android:protectionLevel="signature" />
+62-->[androidx.core:core:1.17.0] /Users/autovation/.gradle/caches/8.14.3/transforms/11094a199bb7945826b161d8a9c17beb/transformed/core-1.17.0/AndroidManifest.xml:24:9-44
+63
+64    <uses-permission android:name="com.shadowhunt.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+64-->[androidx.core:core:1.17.0] /Users/autovation/.gradle/caches/8.14.3/transforms/11094a199bb7945826b161d8a9c17beb/transformed/core-1.17.0/AndroidManifest.xml:26:5-97
+64-->[androidx.core:core:1.17.0] /Users/autovation/.gradle/caches/8.14.3/transforms/11094a199bb7945826b161d8a9c17beb/transformed/core-1.17.0/AndroidManifest.xml:26:22-94
+65
+66    <application
+66-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:3:5-30:19
+67        android:allowBackup="true"
+67-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:4:9-35
+68        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+68-->[androidx.core:core:1.17.0] /Users/autovation/.gradle/caches/8.14.3/transforms/11094a199bb7945826b161d8a9c17beb/transformed/core-1.17.0/AndroidManifest.xml:28:18-86
+69        android:debuggable="true"
+70        android:extractNativeLibs="false"
+71        android:icon="@mipmap/ic_launcher"
+71-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:5:9-43
+72        android:label="@string/app_name"
+72-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:6:9-41
+73        android:requestLegacyExternalStorage="true"
+73-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:8:18-61
+74        android:roundIcon="@mipmap/ic_launcher_round"
+74-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:7:9-54
+75        android:supportsRtl="true"
+75-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:8:9-35
+76        android:theme="@style/AppTheme" >
+76-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:9:9-40
+77        <activity
+77-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:10:9-21:20
+78            android:name="com.shadowhunt.app.MainActivity"
+78-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:12:13-41
+79            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode|navigation|density"
+79-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:11:13-148
+80            android:exported="true"
+80-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:16:13-36
+81            android:label="@string/title_activity_main"
+81-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:13:13-56
+82            android:launchMode="singleTask"
+82-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:15:13-44
+83            android:theme="@style/AppTheme.NoActionBarLaunch" >
+83-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:14:13-62
+84            <intent-filter>
+84-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:17:13-20:29
+85                <action android:name="android.intent.action.MAIN" />
+85-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:18:17-69
+85-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:18:25-66
+86
+87                <category android:name="android.intent.category.LAUNCHER" />
+87-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:19:17-77
+87-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:19:27-74
+88            </intent-filter>
+89        </activity>
+90
+91        <provider
+92            android:name="androidx.core.content.FileProvider"
+92-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:24:13-62
+93            android:authorities="com.shadowhunt.app.fileprovider"
+93-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:25:13-64
+94            android:exported="false"
+94-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:26:13-37
+95            android:grantUriPermissions="true" >
+95-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:27:13-47
+96            <meta-data
+96-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:28:13-112
+97                android:name="android.support.FILE_PROVIDER_PATHS"
+97-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:28:24-74
+98                android:resource="@xml/file_paths" />
+98-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:28:75-109
+99        </provider>
+100
+101        <service
+101-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:24:9-28:56
+102            android:name="com.equimaps.capacitor_background_geolocation.BackgroundGeolocationService"
+102-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:25:13-102
+103            android:enabled="true"
+103-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:26:13-35
+104            android:exported="true"
+104-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:27:13-36
+105            android:foregroundServiceType="location" />
+105-->[:capacitor-community-background-geolocation] /Users/autovation/Desktop/Ghost/node_modules/@capacitor-community/background-geolocation/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:28:13-53
+106
+107        <receiver android:name="com.capacitorjs.plugins.localnotifications.TimedNotificationPublisher" />
+107-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:9-106
+107-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:19-103
+108        <receiver android:name="com.capacitorjs.plugins.localnotifications.NotificationDismissReceiver" />
+108-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:13:9-107
+108-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:13:19-104
+109        <receiver
+109-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:14:9-23:20
+110            android:name="com.capacitorjs.plugins.localnotifications.LocalNotificationRestoreReceiver"
+110-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:13-103
+111            android:directBootAware="true"
+111-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:16:13-43
+112            android:exported="false" >
+112-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:17:13-37
+113            <intent-filter>
+113-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:18:13-22:29
+114                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+114-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:19:17-86
+114-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:19:25-83
+115                <action android:name="android.intent.action.BOOT_COMPLETED" />
+115-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:20:17-79
+115-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:20:25-76
+116                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+116-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:21:17-82
+116-->[:capacitor-local-notifications] /Users/autovation/Desktop/Ghost/node_modules/@capacitor/local-notifications/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:21:25-79
+117            </intent-filter>
+118        </receiver>
+119
+120        <activity
+120-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:9:9-11:86
+121            android:name="io.ionic.libs.ioncameralib.view.IONCAMRLoadingActivity"
+121-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:10:13-82
+122            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+122-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:11:13-83
+123        <activity
+123-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:12:9-16:36
+124            android:name="io.ionic.libs.ioncameralib.view.IONCAMRImageEditorActivity"
+124-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:13:13-86
+125            android:enableOnBackInvokedCallback="true"
+125-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:14:13-55
+126            android:theme="@android:style/Theme.Black.NoTitleBar" />
+126-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:15:13-66
+127        <activity
+127-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:17:9-20:86
+128            android:name="io.ionic.libs.ioncameralib.view.IONCAMROpenPhotoPickerActivity"
+128-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:18:13-90
+129            android:exported="false"
+129-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:19:13-37
+130            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" /> <!-- Trigger Google Play services to install the backported photo picker module. -->
+130-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:20:13-83
+131        <service
+131-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:22:9-34:19
+132            android:name="com.google.android.gms.metadata.ModuleDependencies"
+132-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:23:13-78
+133            android:enabled="false"
+133-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:24:13-36
+134            android:exported="false" >
+134-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:25:13-37
+135            <intent-filter>
+135-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:27:13-29:29
+136                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+136-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:28:17-94
+136-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:28:25-91
+137            </intent-filter>
+138
+139            <meta-data
+139-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:31:13-33:36
+140                android:name="photopicker_activity:0:required"
+140-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:32:17-63
+141                android:value="" />
+141-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:33:17-33
+142        </service>
+143
+144        <provider
+144-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:36:9-44:20
+145            android:name="io.ionic.libs.ioncameralib.IONCAMRFileProvider"
+145-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:37:13-74
+146            android:authorities="com.shadowhunt.app.camera.provider"
+146-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:38:13-67
+147            android:exported="false"
+147-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:39:13-37
+148            android:grantUriPermissions="true" >
+148-->[io.ionic.libs:ioncamera-android:1.0.0] /Users/autovation/.gradle/caches/8.14.3/transforms/240b98250f19f78d3c0bb7a81ae5d353/transformed/ioncamera-android-1.0.0/AndroidManifest.xml:40:13-47
+149            <meta-data
+149-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:28:13-112
+150                android:name="android.support.FILE_PROVIDER_PATHS"
+150-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:28:24-74
+151                android:resource="@xml/ioncamera_paths" />
+151-->/Users/autovation/Desktop/Ghost/android/app/src/main/AndroidManifest.xml:28:75-109
+152        </provider>
+153
+154        <activity
+154-->[com.google.android.gms:play-services-base:18.5.0] /Users/autovation/.gradle/caches/8.14.3/transforms/c1b0052ae712299163f2612d6db27779/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+155            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+155-->[com.google.android.gms:play-services-base:18.5.0] /Users/autovation/.gradle/caches/8.14.3/transforms/c1b0052ae712299163f2612d6db27779/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+156            android:exported="false"
+156-->[com.google.android.gms:play-services-base:18.5.0] /Users/autovation/.gradle/caches/8.14.3/transforms/c1b0052ae712299163f2612d6db27779/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+157            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+157-->[com.google.android.gms:play-services-base:18.5.0] /Users/autovation/.gradle/caches/8.14.3/transforms/c1b0052ae712299163f2612d6db27779/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+158
+159        <provider
+159-->[androidx.emoji2:emoji2:1.3.0] /Users/autovation/.gradle/caches/8.14.3/transforms/353d69426d62513a7e19e841051a3a44/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+160            android:name="androidx.startup.InitializationProvider"
+160-->[androidx.emoji2:emoji2:1.3.0] /Users/autovation/.gradle/caches/8.14.3/transforms/353d69426d62513a7e19e841051a3a44/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+161            android:authorities="com.shadowhunt.app.androidx-startup"
+161-->[androidx.emoji2:emoji2:1.3.0] /Users/autovation/.gradle/caches/8.14.3/transforms/353d69426d62513a7e19e841051a3a44/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+162            android:exported="false" >
+162-->[androidx.emoji2:emoji2:1.3.0] /Users/autovation/.gradle/caches/8.14.3/transforms/353d69426d62513a7e19e841051a3a44/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+163            <meta-data
+163-->[androidx.emoji2:emoji2:1.3.0] /Users/autovation/.gradle/caches/8.14.3/transforms/353d69426d62513a7e19e841051a3a44/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+164                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+164-->[androidx.emoji2:emoji2:1.3.0] /Users/autovation/.gradle/caches/8.14.3/transforms/353d69426d62513a7e19e841051a3a44/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+165                android:value="androidx.startup" />
+165-->[androidx.emoji2:emoji2:1.3.0] /Users/autovation/.gradle/caches/8.14.3/transforms/353d69426d62513a7e19e841051a3a44/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+166            <meta-data
+166-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/autovation/.gradle/caches/8.14.3/transforms/14a3b51da1167f75215e7e32d2231e74/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+167                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+167-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/autovation/.gradle/caches/8.14.3/transforms/14a3b51da1167f75215e7e32d2231e74/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+168                android:value="androidx.startup" />
+168-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/autovation/.gradle/caches/8.14.3/transforms/14a3b51da1167f75215e7e32d2231e74/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+169            <meta-data
+169-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+170                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+170-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+171                android:value="androidx.startup" />
+171-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+172        </provider>
+173        <!--
+174        Service for holding metadata. Cannot be instantiated.
+175        Metadata will be merged from other manifests.
+176        -->
+177        <service
+177-->[androidx.camera:camera-core:1.4.2] /Users/autovation/.gradle/caches/8.14.3/transforms/1bed5d73aa0783bafdf646ee8d6db11d/transformed/camera-core-1.4.2/AndroidManifest.xml:29:9-33:78
+178            android:name="androidx.camera.core.impl.MetadataHolderService"
+178-->[androidx.camera:camera-core:1.4.2] /Users/autovation/.gradle/caches/8.14.3/transforms/1bed5d73aa0783bafdf646ee8d6db11d/transformed/camera-core-1.4.2/AndroidManifest.xml:30:13-75
+179            android:enabled="false"
+179-->[androidx.camera:camera-core:1.4.2] /Users/autovation/.gradle/caches/8.14.3/transforms/1bed5d73aa0783bafdf646ee8d6db11d/transformed/camera-core-1.4.2/AndroidManifest.xml:31:13-36
+180            android:exported="false" />
+180-->[androidx.camera:camera-core:1.4.2] /Users/autovation/.gradle/caches/8.14.3/transforms/1bed5d73aa0783bafdf646ee8d6db11d/transformed/camera-core-1.4.2/AndroidManifest.xml:32:13-37
+181
+182        <meta-data
+182-->[com.google.android.gms:play-services-basement:18.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/535e9dd0a65eaa85bd344836d560144e/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+183            android:name="com.google.android.gms.version"
+183-->[com.google.android.gms:play-services-basement:18.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/535e9dd0a65eaa85bd344836d560144e/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+184            android:value="@integer/google_play_services_version" />
+184-->[com.google.android.gms:play-services-basement:18.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/535e9dd0a65eaa85bd344836d560144e/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+185
+186        <receiver
+186-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+187            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+187-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+188            android:directBootAware="false"
+188-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+189            android:enabled="true"
+189-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+190            android:exported="true"
+190-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+191            android:permission="android.permission.DUMP" >
+191-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+192            <intent-filter>
+192-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+193                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+193-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+193-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+194            </intent-filter>
+195            <intent-filter>
+195-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+196                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+196-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+196-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+197            </intent-filter>
+198            <intent-filter>
+198-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+199                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+199-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+199-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+200            </intent-filter>
+201            <intent-filter>
+201-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+202                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+202-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+202-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/autovation/.gradle/caches/8.14.3/transforms/f95ab50c54d3211c648684c462933e30/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+203            </intent-filter>
+204        </receiver>
+205    </application>
+206
+207</manifest>
