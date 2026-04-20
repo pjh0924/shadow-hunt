@@ -41,3 +41,6 @@ ios/Pods
 *.sln
 *.sw?
 .vite/
+playwright-report/
+test-results/
+dev-dist/

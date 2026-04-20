@@ -65,7 +65,7 @@ export class GhostWorld {
     this._capturedIds = [...this._capturedIds, id];
 
     if (this._ghosts.length === 0) {
-      this._respawnTimer && clearTimeout(this._respawnTimer);
+      if (this._respawnTimer) clearTimeout(this._respawnTimer);
       this._respawnTimer = setTimeout(() => {
         this._respawnTimer = null;
         this.respawnAround(userPosition);

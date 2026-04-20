@@ -1,0 +1,13 @@
+dist
+build
+coverage
+node_modules
+android/app/build
+android/build
+android/.gradle
+ios/App/build
+ios/Pods
+public/mediapipe
+resources
+*.md
+package-lock.json

@@ -35,7 +35,7 @@ export default function NoiseFilter({ intensity }: Props) {
     const onResize = () => ({ w, h } = resize());
     window.addEventListener('resize', onResize);
 
-    let start = performance.now();
+    const start = performance.now();
     const loop = () => {
       const inten = intensityRef.current;
       const t = (performance.now() - start) / 1000;
@@ -108,8 +108,7 @@ export default function NoiseFilter({ intensity }: Props) {
       <div
         className="pointer-events-none absolute inset-0 z-10"
         style={{
-          background:
-            'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.85) 100%)',
+          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.85) 100%)',
         }}
       />
     </>

@@ -9,10 +9,13 @@
  */
 import { Haptics, ImpactStyle } from '@capacitor/haptics';
 import { SoundService } from './SoundService';
+import { useSettingsStore } from '../store/useSettingsStore';
 
 // 안전하게 감싸기 — haptics 호출이 web 에서 실패해도 silent.
+// 설정에서 햅틱 OFF 면 no-op.
 async function safeImpact(style: ImpactStyle) {
   try {
+    if (!useSettingsStore.getState().haptic) return;
     await Haptics.impact({ style });
   } catch {
     /* web dev 에서 silent */

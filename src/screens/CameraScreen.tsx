@@ -24,6 +24,7 @@ import CameraHudBottom from '../components/CameraHudBottom';
 import GhostOverlay from '../components/GhostOverlay';
 import DetectionCountChip from '../components/DetectionCountChip';
 import FirstSightingPulse from '../components/FirstSightingPulse';
+import CaptureBurst from '../components/CaptureBurst';
 import PermissionDeniedScreen from '../components/PermissionDeniedScreen';
 import ScanningLoader from '../components/ScanningLoader';
 
@@ -70,6 +71,7 @@ export default function CameraScreen() {
   const [capturing, setCapturing] = useState(false);
   const [flash, setFlash] = useState(false);
   const [firstSightingTick, setFirstSightingTick] = useState(0);
+  const [captureBurst, setCaptureBurst] = useState(0);
 
   const { level, sim } = useEmf();
 
@@ -105,6 +107,7 @@ export default function CameraScreen() {
     FeedbackService.onShutter();
     setFlash(true);
     setTimeout(() => setFlash(false), 90);
+    setCaptureBurst((n) => n + 1); // 네온 버스트 트리거
 
     try {
       // 1. 비디오 프레임 → JPEG dataURL
@@ -199,15 +202,14 @@ export default function CameraScreen() {
       {/* 첫 발견 붉은 펄스 */}
       <FirstSightingPulse trigger={firstSightingTick} />
 
+      {/* 캡처 축하 네온 버스트 */}
+      <CaptureBurst trigger={captureBurst} />
+
       {/* 검출 카운트 배지 */}
       <DetectionCountChip count={detectedCount} />
 
       {/* 상단 HUD */}
-      <CameraHudTop
-        ghostLabel={ghostLabel}
-        emfLevel={level}
-        onClose={onClose}
-      />
+      <CameraHudTop ghostLabel={ghostLabel} emfLevel={level} onClose={onClose} />
 
       {/* 하단 HUD */}
       <CameraHudBottom
@@ -224,15 +226,15 @@ export default function CameraScreen() {
 
       {/* 로딩 — ML 모델 로드 상태도 겸함 */}
       {phase === 'loading' && (
-        <ScanningLoader
-          message={mlReady ? t('scanningLoaderDefault') : 'Loading detector…'}
-        />
+        <ScanningLoader message={mlReady ? t('scanningLoaderDefault') : 'Loading detector…'} />
       )}
 
       {errorMsg && (
-        <div className="pointer-events-none absolute inset-x-4 top-20 z-30
+        <div
+          className="pointer-events-none absolute inset-x-4 top-20 z-30
                         rounded-md border border-warn/60 bg-black/80 p-2
-                        text-[11px] font-bold text-warn text-glow">
+                        text-[11px] font-bold text-warn text-glow"
+        >
           ⚠ {t('cameraInitFailed', { error: errorMsg })}
         </div>
       )}

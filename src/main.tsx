@@ -10,6 +10,7 @@ import './index.css';
 import './i18n/config';
 import App from './App';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { reportVitals } from './utils/reportVitals';
 
 // 전역 unhandled 에러/reject → localStorage 에 기록 (Boundary 외부에서도)
 window.addEventListener('unhandledrejection', (e) => {
@@ -19,5 +20,12 @@ window.addEventListener('unhandledrejection', (e) => {
 createRoot(document.getElementById('root')!).render(
   <ErrorBoundary>
     <App />
-  </ErrorBoundary>
+  </ErrorBoundary>,
 );
+
+// web-vitals — idle 시점에 등록 (LCP/FCP/CLS/INP/TTFB 콘솔 로깅)
+if (typeof requestIdleCallback === 'function') {
+  requestIdleCallback(reportVitals);
+} else {
+  setTimeout(reportVitals, 1000);
+}

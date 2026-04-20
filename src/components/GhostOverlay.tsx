@@ -20,7 +20,10 @@ interface Props {
 export default function GhostOverlay({ ghosts }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const ghostsRef = useRef<DetectedGhost[]>(ghosts);
-  ghostsRef.current = ghosts;
+  // 렌더 중 ref 쓰기 대신 layout 효과 로 최신 값만 업데이트
+  useEffect(() => {
+    ghostsRef.current = ghosts;
+  }, [ghosts]);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -110,9 +113,6 @@ export default function GhostOverlay({ ghosts }: Props) {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="pointer-events-none absolute inset-0 z-15 h-full w-full"
-    />
+    <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 z-15 h-full w-full" />
   );
 }

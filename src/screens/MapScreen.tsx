@@ -13,13 +13,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Circle,
-  useMap,
-} from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Circle, useMap } from 'react-leaflet';
 
 import { useLocationStore } from '../store/useLocationStore';
 import { useGhostWorldStore } from '../store/useGhostWorldStore';
@@ -34,32 +28,21 @@ import ScanningLoader from '../components/ScanningLoader';
 import PermissionDeniedScreen from '../components/PermissionDeniedScreen';
 import MockControlPanel from '../components/MockControlPanel';
 import RecenterFAB from '../components/RecenterFAB';
-import {
-  createGhostIconHidden,
-  createGhostIconVisible,
-} from '../components/icons/ghostMarkerIcon';
+import { createGhostIconHidden, createGhostIconVisible } from '../components/icons/ghostMarkerIcon';
 import { createUserIcon } from '../components/icons/userMarkerIcon';
 
 import { distanceMeters } from '../utils/haversine';
-import {
-  HUNT_RADIUS_M,
-  VISIBLE_RADIUS_M,
-} from '../constants/huntConstants';
+import { HUNT_RADIUS_M, VISIBLE_RADIUS_M } from '../constants/huntConstants';
 import { FeedbackService } from '../services/FeedbackService';
 import { NotificationService } from '../services/NotificationService';
 import { SoundService } from '../services/SoundService';
 
-const TILE_URL =
-  'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
+const TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
 const TILE_ATTR =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>';
 
 /** 지도 컨트롤러 — useMap 훅을 부분 컴포넌트로 빼서 부모에 callback 노출. */
-function MapController({
-  onReady,
-}: {
-  onReady: (map: L.Map) => void;
-}) {
+function MapController({ onReady }: { onReady: (map: L.Map) => void }) {
   const map = useMap();
   useEffect(() => {
     onReady(map);
@@ -145,7 +128,7 @@ export default function MapScreen() {
       FeedbackService.onEnterHuntZone();
       NotificationService.zoneEntered(
         t('notifZoneTitle'),
-        t('notifZoneBody', { label: detected!.label })
+        t('notifZoneBody', { label: detected!.label }),
       );
     } else if (!cur && prev) {
       FeedbackService.onExitHuntZone();
@@ -224,11 +207,7 @@ export default function MapScreen() {
     );
   }
   if (status === 'pending' || !fix) {
-    return (
-      <ScanningLoader
-        onSkipToMock={() => setMockMode(true)}
-      />
-    );
+    return <ScanningLoader onSkipToMock={() => setMockMode(true)} />;
   }
 
   return (
@@ -306,26 +285,33 @@ export default function MapScreen() {
           {t('appTitle')}
           {mockMode && <span className="text-warn"> · {t('mock')}</span>}
         </h1>
-        <button
-          type="button"
-          onClick={() => navigate('/codex')}
-          aria-label={t('mapCodexTooltip')}
-          className="rounded-md border border-neon/40 px-3 py-1 text-xs font-bold text-neon
-                     focus:outline-none focus:ring-2 focus:ring-neon
-                     active:bg-neon/20"
-        >
-          <span aria-hidden="true">📓</span>
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => navigate('/settings')}
+            aria-label={t('settingsTooltip')}
+            className="rounded-md border border-neon/40 px-3 py-1 text-xs font-bold text-neon
+                       focus:outline-none focus:ring-2 focus:ring-neon active:bg-neon/20"
+          >
+            <span aria-hidden="true">⚙</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => navigate('/codex')}
+            aria-label={t('mapCodexTooltip')}
+            className="rounded-md border border-neon/40 px-3 py-1 text-xs font-bold text-neon
+                       focus:outline-none focus:ring-2 focus:ring-neon active:bg-neon/20"
+          >
+            <span aria-hidden="true">📓</span>
+          </button>
+        </div>
       </header>
 
       {/* 좌상단 방향 인디케이터 */}
       <DirectionIndicator ghosts={ghosts} userFix={fix} />
 
       {/* 하단 카메라 버튼 패널 */}
-      <HuntActionPanel
-        detectedLabel={detected?.label ?? null}
-        onEnterCamera={onEnterCamera}
-      />
+      <HuntActionPanel detectedLabel={detected?.label ?? null} onEnterCamera={onEnterCamera} />
 
       {/* 우하단 recenter */}
       <RecenterFAB

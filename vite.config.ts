@@ -2,19 +2,24 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    // 번들 시각화 — ANALYZE=1 시에만 활성, dist/stats.html 생성.
+    process.env.ANALYZE === '1' &&
+      visualizer({
+        filename: 'dist/stats.html',
+        template: 'treemap',
+        gzipSize: true,
+        brotliSize: true,
+      }),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: [
-        'favicon.svg',
-        'mediapipe/*.wasm',
-        'mediapipe/*.js',
-      ],
+      includeAssets: ['favicon.svg', 'mediapipe/*.wasm', 'mediapipe/*.js'],
       manifest: {
         name: 'Shadow Hunt',
         short_name: 'ShadowHunt',

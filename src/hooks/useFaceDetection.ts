@@ -38,41 +38,60 @@ export function useFaceDetection(video: HTMLVideoElement | null) {
   }, []);
 
   // 검출 루프
+  //   - requestAnimationFrame 기반 (브라우저 스케줄러 싱크 → 부드러움)
+  //   - 250ms throttle (4Hz 유지)
+  //   - Page Visibility API: 탭 숨겨지면 pause (배터리/CPU 절약)
   useEffect(() => {
     if (!video || !ready) return;
     let cancelled = false;
     let lastNonEmpty: DetectionResult | null = null;
     let lastNonEmptyAt = 0;
+    let lastRunAt = 0;
+    let rafId = 0;
 
-    const tick = async () => {
+    const tick = () => {
       if (cancelled) return;
-      try {
-        const ts = performance.now();
-        const r = serviceRef.current?.detect(video, ts);
-        if (r) {
-          if (r.ghosts.length > 0) {
-            lastNonEmpty = r;
-            lastNonEmptyAt = ts;
-            setResult(r);
-          } else {
-            // 비어 있어도 hold
-            if (lastNonEmpty && ts - lastNonEmptyAt < HOLD_MS) {
+      // 탭 숨김: rAF 자체가 일시정지. visibilitychange 에서 재시작.
+      if (document.hidden) {
+        return;
+      }
+      const ts = performance.now();
+      if (ts - lastRunAt >= DETECT_INTERVAL_MS) {
+        lastRunAt = ts;
+        try {
+          const r = serviceRef.current?.detect(video, ts);
+          if (r) {
+            if (r.ghosts.length > 0) {
+              lastNonEmpty = r;
+              lastNonEmptyAt = ts;
+              setResult(r);
+            } else if (lastNonEmpty && ts - lastNonEmptyAt < HOLD_MS) {
               setResult(lastNonEmpty);
             } else {
               setResult(r);
             }
           }
+        } catch (e) {
+          console.warn('detect failed:', e);
         }
-      } catch (e) {
-        // 디바이스/모델 오류는 무시 — 다음 틱 시도
-        console.warn('detect failed:', e);
       }
+      rafId = window.requestAnimationFrame(tick);
     };
 
-    const id = window.setInterval(tick, DETECT_INTERVAL_MS);
+    rafId = window.requestAnimationFrame(tick);
+
+    const onVis = () => {
+      if (!document.hidden && !cancelled) {
+        cancelAnimationFrame(rafId);
+        rafId = window.requestAnimationFrame(tick);
+      }
+    };
+    document.addEventListener('visibilitychange', onVis);
+
     return () => {
       cancelled = true;
-      window.clearInterval(id);
+      cancelAnimationFrame(rafId);
+      document.removeEventListener('visibilitychange', onVis);
     };
   }, [video, ready]);
 
