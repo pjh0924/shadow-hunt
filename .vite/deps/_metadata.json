@@ -1,0 +1,126 @@
+{
+  "hash": "f1d1e2c4",
+  "configHash": "1ab0882b",
+  "lockfileHash": "a2d3f2bc",
+  "browserHash": "44dc3352",
+  "optimized": {
+    "@capacitor/core": {
+      "src": "../../node_modules/@capacitor/core/dist/index.js",
+      "file": "@capacitor_core.js",
+      "fileHash": "df164174",
+      "needsInterop": false
+    },
+    "@capacitor/geolocation": {
+      "src": "../../node_modules/@capacitor/geolocation/dist/esm/index.js",
+      "file": "@capacitor_geolocation.js",
+      "fileHash": "a080e34b",
+      "needsInterop": false
+    },
+    "@capacitor/haptics": {
+      "src": "../../node_modules/@capacitor/haptics/dist/esm/index.js",
+      "file": "@capacitor_haptics.js",
+      "fileHash": "6de9be27",
+      "needsInterop": false
+    },
+    "@capacitor/local-notifications": {
+      "src": "../../node_modules/@capacitor/local-notifications/dist/esm/index.js",
+      "file": "@capacitor_local-notifications.js",
+      "fileHash": "c3132043",
+      "needsInterop": false
+    },
+    "i18next-browser-languagedetector": {
+      "src": "../../node_modules/i18next-browser-languagedetector/dist/esm/i18nextBrowserLanguageDetector.js",
+      "file": "i18next-browser-languagedetector.js",
+      "fileHash": "b368d126",
+      "needsInterop": false
+    },
+    "i18next": {
+      "src": "../../node_modules/i18next/dist/esm/i18next.js",
+      "file": "i18next.js",
+      "fileHash": "9016ca41",
+      "needsInterop": false
+    },
+    "leaflet": {
+      "src": "../../node_modules/leaflet/dist/leaflet-src.js",
+      "file": "leaflet.js",
+      "fileHash": "cf2067d9",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "9e203816",
+      "needsInterop": true
+    },
+    "react-i18next": {
+      "src": "../../node_modules/react-i18next/dist/es/index.js",
+      "file": "react-i18next.js",
+      "fileHash": "04412937",
+      "needsInterop": false
+    },
+    "react-leaflet": {
+      "src": "../../node_modules/react-leaflet/lib/index.js",
+      "file": "react-leaflet.js",
+      "fileHash": "d1c21026",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "aaab749d",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "01d62ec3",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "f971116e",
+      "needsInterop": true
+    },
+    "web-vitals": {
+      "src": "../../node_modules/web-vitals/dist/web-vitals.js",
+      "file": "web-vitals.js",
+      "fileHash": "a5f4f94a",
+      "needsInterop": false
+    },
+    "zustand": {
+      "src": "../../node_modules/zustand/esm/index.mjs",
+      "file": "zustand.js",
+      "fileHash": "d8d1a188",
+      "needsInterop": false
+    },
+    "zustand/middleware": {
+      "src": "../../node_modules/zustand/esm/middleware.mjs",
+      "file": "zustand_middleware.js",
+      "fileHash": "51f9efaa",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-CO3PsZeE": {
+      "file": "chunk-CO3PsZeE.js",
+      "isDynamicEntry": false
+    },
+    "react-dom-a5cSFulX": {
+      "file": "react-dom-a5cSFulX.js",
+      "isDynamicEntry": false
+    },
+    "web-BShjNgKd": {
+      "file": "web-BShjNgKd.js",
+      "isDynamicEntry": true
+    },
+    "web-CB0n5bgg": {
+      "file": "web-CB0n5bgg.js",
+      "isDynamicEntry": true
+    },
+    "web-usB8B8vh": {
+      "file": "web-usB8B8vh.js",
+      "isDynamicEntry": true
+    }
+  }
+}
