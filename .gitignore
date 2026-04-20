@@ -40,3 +40,4 @@ ios/Pods
 *.njsproj
 *.sln
 *.sw?
+.vite/
