@@ -1,0 +1,73 @@
+{
+  "appTitle": "Shadow Hunt",
+  "mock": "MOCK",
+
+  "permissionDeniedHeadline": "신호를 잡을 수 없습니다",
+  "permissionDeniedLocationMessage": "주변 고스트 스팟을 탐지하려면 위치 권한과 위치 서비스가 필요합니다.\n권한을 허용한 뒤 다시 시도해 주세요.",
+  "permissionDeniedRetry": "다시 시도",
+  "permissionDeniedOpenSettings": "설정에서 권한 허용",
+  "permissionDeniedBackToMap": "지도로 돌아가기",
+
+  "mapCodexTooltip": "도감",
+  "mapCameraModeEntered": "카메라 모드 진입 → {{label}}",
+  "mapCapturedSnack": "도감에 기록됨 — {{label}}",
+
+  "huntActionEnterCamera": "카메라 모드 진입",
+  "huntActionSearchGhost": "귀신을 찾아 이동하세요",
+  "huntActionDetected": "⚠ {{label}} 감지됨",
+
+  "scanningLoaderDefault": "신호를 스캔하는 중...",
+  "signalLostBanner": "신호 약함 - 재연결 중...",
+  "directionUnknownSignal": "미식별 신호",
+
+  "ghostDetailHintHidden": "신호가 약합니다. 더 가까이 다가가야 정체를 식별할 수 있습니다.",
+  "ghostDetailHintVisible": "형상이 식별되었습니다. 헌트존(25m) 안으로 진입해 카메라를 켜세요.",
+  "ghostDetailHintInZone": "대상이 헌트존 안에 있습니다. 카메라 모드로 진입할 수 있습니다.",
+  "ghostDetailDistance": "거리 {{meters}}m",
+  "ghostDetailLabelHidden": "미식별 신호",
+
+  "cameraPermissionHeadline": "카메라 권한이 필요합니다",
+  "cameraPermissionMessage": "현장의 형상을 탐지하려면 카메라 사용을 허용해 주세요.",
+  "cameraCaptureSnack": "촬영 — EMF {{emf}} · 검출 {{count}}건",
+  "cameraCaptureFailed": "촬영 실패: {{error}}",
+  "cameraInitFailed": "카메라 초기화 실패: {{error}}",
+
+  "codexEmptyTitle": "아직 발견된 형상이 없습니다",
+  "codexEmptyHint": "카메라 모드에서 형상을 촬영하면\n이곳에 자동으로 기록됩니다.",
+  "codexEmptyCta": "첫 형상을 잡으러 가기",
+  "codexLoadFailed": "도감을 불러올 수 없습니다.\n{{error}}",
+  "codexSortTooltip": "정렬",
+  "codexStatsTooltip": "통계",
+  "codexSortNewest": "최신순",
+  "codexSortOldest": "오래된순",
+  "codexSortEmfDesc": "EMF 높은순",
+  "codexSortEmfAsc": "EMF 낮은순",
+  "codexSortLabel": "라벨순",
+
+  "codexDetailDeleteTitle": "항목 삭제",
+  "codexDetailDeleteMessage": "도감에서 영구 삭제됩니다. 계속할까요?",
+  "codexDetailCancel": "취소",
+  "codexDetailDelete": "삭제",
+  "codexDetailShareTooltip": "공유",
+  "codexDetailDeleteTooltip": "삭제",
+  "codexDetailShareFailed": "공유 실패: {{error}}",
+  "codexDetailFileNotFound": "사진 파일을 찾을 수 없습니다.",
+  "codexDetailEmf": "EMF {{value}}",
+  "codexDetailDetection": "검출된 형상 {{count}}건",
+  "codexDetailDetectionShownSuffix": " (사진에 표시)",
+
+  "codexStatsTitle": "STATS",
+  "codexStatsTotal": "총 캡처",
+  "codexStatsDetected": "검출된 총 형상",
+  "codexStatsAvgPerCapture": "평균 {{avg}} / 컷",
+  "codexStatsAvgEmf": "평균 EMF",
+  "codexStatsRange": "0.00 ~ 5.00 범위",
+  "codexStatsMaxEmf": "최고 EMF",
+  "codexStatsTopLabel": "최다 라벨",
+  "codexStatsTopLabelCount": "{{count}} 회",
+  "codexStatsFirst": "첫 캡처",
+  "codexStatsLast": "최근 캡처",
+
+  "notifZoneTitle": "신호 감지",
+  "notifZoneBody": "{{label}} 이(가) 헌트존 안에 있습니다."
+}

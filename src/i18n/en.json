@@ -1,0 +1,73 @@
+{
+  "appTitle": "Shadow Hunt",
+  "mock": "MOCK",
+
+  "permissionDeniedHeadline": "Signal Lost",
+  "permissionDeniedLocationMessage": "Location permission and location services are required to detect nearby ghost spots.\nPlease grant access and try again.",
+  "permissionDeniedRetry": "Try Again",
+  "permissionDeniedOpenSettings": "Open Settings",
+  "permissionDeniedBackToMap": "Back to Map",
+
+  "mapCodexTooltip": "Codex",
+  "mapCameraModeEntered": "Entered camera mode → {{label}}",
+  "mapCapturedSnack": "Archived — {{label}}",
+
+  "huntActionEnterCamera": "Enter Camera Mode",
+  "huntActionSearchGhost": "Move closer to a ghost",
+  "huntActionDetected": "⚠ {{label}} detected",
+
+  "scanningLoaderDefault": "Scanning for signals…",
+  "signalLostBanner": "Weak signal — reconnecting…",
+  "directionUnknownSignal": "Unknown signal",
+
+  "ghostDetailHintHidden": "Signal is weak. Get closer to identify the form.",
+  "ghostDetailHintVisible": "Form identified. Step into the hunt zone (25m) and turn on the camera.",
+  "ghostDetailHintInZone": "Target is in the hunt zone. You can enter camera mode now.",
+  "ghostDetailDistance": "Distance {{meters}}m",
+  "ghostDetailLabelHidden": "Unknown signal",
+
+  "cameraPermissionHeadline": "Camera Access Required",
+  "cameraPermissionMessage": "Camera access is needed to detect forms in the field.",
+  "cameraCaptureSnack": "Captured — EMF {{emf}} · {{count}} detections",
+  "cameraCaptureFailed": "Capture failed: {{error}}",
+  "cameraInitFailed": "Camera init failed: {{error}}",
+
+  "codexEmptyTitle": "No forms detected yet",
+  "codexEmptyHint": "Capture a form in camera mode\nand it will be archived here.",
+  "codexEmptyCta": "Hunt your first form",
+  "codexLoadFailed": "Could not load codex.\n{{error}}",
+  "codexSortTooltip": "Sort",
+  "codexStatsTooltip": "Stats",
+  "codexSortNewest": "Newest",
+  "codexSortOldest": "Oldest",
+  "codexSortEmfDesc": "EMF Desc",
+  "codexSortEmfAsc": "EMF Asc",
+  "codexSortLabel": "By Label",
+
+  "codexDetailDeleteTitle": "Delete Item",
+  "codexDetailDeleteMessage": "This entry will be permanently removed from the codex. Continue?",
+  "codexDetailCancel": "Cancel",
+  "codexDetailDelete": "Delete",
+  "codexDetailShareTooltip": "Share",
+  "codexDetailDeleteTooltip": "Delete",
+  "codexDetailShareFailed": "Share failed: {{error}}",
+  "codexDetailFileNotFound": "Photo file not found.",
+  "codexDetailEmf": "EMF {{value}}",
+  "codexDetailDetection": "Detected forms: {{count}}",
+  "codexDetailDetectionShownSuffix": " (shown on photo)",
+
+  "codexStatsTitle": "STATS",
+  "codexStatsTotal": "Total Captures",
+  "codexStatsDetected": "Total Detections",
+  "codexStatsAvgPerCapture": "avg {{avg}} per shot",
+  "codexStatsAvgEmf": "Avg EMF",
+  "codexStatsRange": "range 0.00–5.00",
+  "codexStatsMaxEmf": "Max EMF",
+  "codexStatsTopLabel": "Top Label",
+  "codexStatsTopLabelCount": "{{count}} times",
+  "codexStatsFirst": "First Capture",
+  "codexStatsLast": "Latest Capture",
+
+  "notifZoneTitle": "Signal detected",
+  "notifZoneBody": "{{label}} is inside the hunt zone."
+}

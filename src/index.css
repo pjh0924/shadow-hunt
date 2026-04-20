@@ -1,0 +1,72 @@
+/* ============================================================
+ * index.css — Shadow Hunt 전역 스타일
+ * ------------------------------------------------------------
+ * Tailwind v4 — @theme 디렉티브로 색 토큰 직접 선언.
+ * 호러 다크 + 네온 그린 강조.
+ * Leaflet 의 기본 z-index 가 너무 높아 HUD 와 겹치는 문제 방지.
+ * ============================================================ */
+
+@import "tailwindcss";
+
+@theme {
+  /* 호러 팔레트 */
+  --color-bg:        #0a0d0a;   /* 거의 블랙, 약간 그린 머금음 */
+  --color-surface:   #11161b;
+  --color-surface2:  #1a2128;
+  --color-neon:      #21f56e;   /* 핵심 네온 그린 */
+  --color-neon-dim:  #15a749;
+  --color-warn:      #ffb020;
+  --color-danger:    #ff3a55;
+  --color-fog:       rgba(33, 245, 110, 0.10);
+
+  /* 폰트 — 시스템 모노 톤이 호러와 잘 맞음 */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-neon);
+  font-family: var(--font-mono);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+/* Leaflet 기본 z-index 가 1000 대 → HUD 가 가려짐. 한 단계 낮춤. */
+.leaflet-container {
+  background: var(--color-bg);
+}
+.leaflet-pane,
+.leaflet-control,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 0 !important;
+}
+.leaflet-pane.leaflet-overlay-pane,
+.leaflet-pane.leaflet-marker-pane,
+.leaflet-pane.leaflet-tooltip-pane,
+.leaflet-pane.leaflet-popup-pane {
+  z-index: 1 !important;
+}
+
+/* HUD 라벨이 카메라 위에 또렷이 보이도록 그림자 헬퍼 */
+.text-glow {
+  text-shadow:
+    0 0 4px var(--color-neon),
+    0 0 8px rgba(33, 245, 110, 0.4);
+}
+
+/* 부드럽게 사라지는 펄스 (헌트존 등) */
+@keyframes ghostPulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 1.0;  transform: scale(1.06); }
+}
+.animate-ghost-pulse { animation: ghostPulse 2.4s ease-in-out infinite; }
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+.animate-scanline { animation: scanline 6s linear infinite; }

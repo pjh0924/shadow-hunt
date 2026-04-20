@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  web:
+    name: typecheck · lint · test · build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund
+
+      - name: TypeScript typecheck
+        run: npm run typecheck
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Unit tests with coverage
+        run: npx vitest run --coverage
+
+      - name: Web build
+        run: npm run build
+
+      - name: Bundle size check
+        # 주 청크가 600KB(gzip 200KB) 넘으면 실패
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const dir = 'dist/assets';
+            const files = fs.readdirSync(dir).filter(f => f.startsWith('index-') && f.endsWith('.js'));
+            const limits = { raw: 600 * 1024, gzip: 200 * 1024 };
+            for (const f of files) {
+              const raw = fs.statSync(path.join(dir, f)).size;
+              console.log(f, 'raw=', (raw/1024).toFixed(1)+'KB');
+              if (raw > limits.raw) {
+                console.error('Main chunk exceeds', (limits.raw/1024)+'KB');
+                process.exit(1);
+              }
+            }
+          "
+
+      - name: Upload coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage/
+          if-no-files-found: ignore

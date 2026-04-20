@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Shadow Hunt</string>
+    <string name="title_activity_main">Shadow Hunt</string>
+    <string name="package_name">com.shadowhunt.app</string>
+    <string name="custom_url_scheme">com.shadowhunt.app</string>
+</resources>
