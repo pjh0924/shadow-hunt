@@ -4,7 +4,8 @@
 지도 위 고스트 스팟으로 이동 → 헌트존 진입 → 카메라 → AI 얼굴 검출이
 "허공에서 귀신 형상"을 탐지하는 컨셉 (False-positive 기반 긴장감).
 
-[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions)
+- **Live (웹 PWA)**: https://pjh0924.github.io/shadow-hunt/
+- **Repo**: https://github.com/pjh0924/shadow-hunt
 
 | | |
 |---|---|
@@ -105,6 +106,21 @@ ML 모델 없이도 검출 이벤트를 시뮬레이션 → EMF 스파이크 + G
 - `exit.mp3` — 헌트존 이탈
 - `first_sighting.mp3` — 첫 형상 발견
 - `shutter.mp3` — 촬영
+
+이미 `scripts/generate-sfx.mjs` 로 ffmpeg 합성 프로시저럴 mp3 가 들어있음
+(덮어쓰기 자유). 자산 없으면 자동으로 Web Audio 프로시저럴 재생.
+
+### 웹 PWA 배포
+
+```bash
+./scripts/deploy.sh
+```
+
+`npm run build` → `dist/` → orphan `gh-pages` 브랜치로 push.
+GitHub Pages 가 ~1분 내 반영.
+
+자동 CI/CD 원하면 `.gh-workflows-pending/*.yml` 을 `.github/workflows/` 로
+옮긴 후 `gh auth refresh -s workflow` 로 토큰 확장 후 push.
 
 ## 라이선스
 
